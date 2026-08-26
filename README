@@ -1,0 +1,7 @@
+# OpenEmail
+
+## Purpose
+
+This repository is intended to be a location to build an open email client for cross platform. This will include all Apple platforms as well as hopefully Android. The intention is to handle the UI with platform specific code while the back end is handled via platform agnostice code, likely C++.
+
+The initial setup will be for iOS. This will help with determingin how to build with SwiftUI and C++ code.

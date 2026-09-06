@@ -1,48 +1,56 @@
 import Foundation
 import SwiftUI
+import os
 
 struct InboxView: View {
-  @State var messages: [Message] = []
+  @State var messages: [MessageListItem] = []
+
+  @State private var focusedMessage: UUID?
+
+  private var logger = Logger()
 
   var body: some View {
-    VStack(alignment: .leading) {
-      Text("Messages")
-        .font(.system(size: 26))
+    VStack(alignment: .leading, spacing: 0) {
+      Text("Messages").font(.system(size: 26))
+        .padding(.leading, 10)
       Divider()
-      ForEach(messages) { message in
-        MessageView(message: message)
+      ScrollView {
+        LazyVStack(alignment: .leading, spacing: 0) {
+          ForEach(messages) { message in
+            VStack(alignment: .leading, spacing: 0) {
+              MessageListItemView(
+                message: message,
+                focusedMessage: $focusedMessage
+              )
+
+              Divider()
+            }
+          }
+        }
       }
-      Spacer()
     }
-    .frame(minWidth: 500, minHeight: 1000)
+    .frame(minWidth: 500, minHeight: 750)
   }
 }
 
 #Preview {
   InboxView(
     messages: [
-      Message(
-        id: UUID(),
-        to: "me",
-        from: "you@google.com",
-        subject: "Message",
-        body: "Text"
-      ),
-      Message(
+      MessageListItem(
         id: UUID(),
         to: "someone",
         from: "bobjones@yahoo.com",
         subject: "Message2",
-        body: "Text2"
       ),
-      Message(
-        id: UUID(),
-        to: "me",
-        from: "sandwichJim@gmail.com",
-        subject: "Message3",
-        body: "Text3"
-      ),
-      Message(id: UUID(), to: "me", from: "jenkins@jenkins.com"),
+      MessageListItem(id: UUID(), to: "me", from: "jenkins@jenkins.com"),
     ]
+      + (0...50).map { num in
+        MessageListItem(
+          id: UUID(),
+          to: "me",
+          from: "you@google.com",
+          subject: "Message\(num)",
+        )
+      },
   )
 }

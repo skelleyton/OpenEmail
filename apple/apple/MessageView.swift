@@ -43,7 +43,6 @@ struct MessageView: View {
 }
 
 #Preview {
-  Section(
     MessageView(
       message: Message(
         id: UUID(),
@@ -53,5 +52,4 @@ struct MessageView: View {
         body: "This is a new e-mail"
       )
     )
-  )
 }

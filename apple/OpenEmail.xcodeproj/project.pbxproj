@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		6922FE863047001500BAEA9D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6922FE843047001500BAEA9D /* App.swift */; };
-		6922FE873047001500BAEA9D /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6922FE853047001500BAEA9D /* InboxView.swift */; };
+		6922FE873047001500BAEA9D /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6922FE853047001500BAEA9D /* MessageListView.swift */; };
 		6922FE89304CFB8900BAEA9D /* MessageListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6922FE88304CFB8900BAEA9D /* MessageListItemView.swift */; };
+		6922FE8C304E512A00BAEA9D /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6922FE8B304E512400BAEA9D /* MessageView.swift */; };
+		6922FE8F304E51A300BAEA9D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6922FE8E304E51A300BAEA9D /* Message.swift */; };
+		6922FE92304F71D200BAEA9D /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6922FE91304F71CE00BAEA9D /* InboxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		000000000000000000000120 /* apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apple.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000120 /* OpenEmail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenEmail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6922FE843047001500BAEA9D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		6922FE853047001500BAEA9D /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		6922FE853047001500BAEA9D /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 		6922FE88304CFB8900BAEA9D /* MessageListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListItemView.swift; sourceTree = "<group>"; };
+		6922FE8B304E512400BAEA9D /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		6922FE8E304E51A300BAEA9D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		6922FE91304F71CE00BAEA9D /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,27 +37,46 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				6922FE91304F71CE00BAEA9D /* InboxView.swift */,
+				6922FE90304F16FB00BAEA9D /* MessageList */,
 				000000000000000000000020 /* Products */,
+				6922FE8D304E519700BAEA9D /* Data */,
+				6922FE8B304E512400BAEA9D /* MessageView.swift */,
 				6922FE843047001500BAEA9D /* App.swift */,
-				6922FE853047001500BAEA9D /* InboxView.swift */,
-				6922FE88304CFB8900BAEA9D /* MessageListItemView.swift */,
 			);
 			sourceTree = "<group>";
 		};
 		000000000000000000000020 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				000000000000000000000120 /* apple.app */,
+				000000000000000000000120 /* OpenEmail.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6922FE8D304E519700BAEA9D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6922FE8E304E51A300BAEA9D /* Message.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6922FE90304F16FB00BAEA9D /* MessageList */ = {
+			isa = PBXGroup;
+			children = (
+				6922FE88304CFB8900BAEA9D /* MessageListItemView.swift */,
+				6922FE853047001500BAEA9D /* MessageListView.swift */,
+			);
+			path = MessageList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		000000000000000100000000 /* apple */ = {
+		000000000000000100000000 /* OpenEmail */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 000000000000000110000000 /* Build configuration list for PBXNativeTarget "apple" */;
+			buildConfigurationList = 000000000000000110000000 /* Build configuration list for PBXNativeTarget "OpenEmail" */;
 			buildPhases = (
 				000000000000000120000000 /* Sources */,
 				000000000000000130000000 /* Frameworks */,
@@ -59,9 +84,9 @@
 			);
 			buildRules = (
 			);
-			name = apple;
+			name = OpenEmail;
 			productName = MyApp;
-			productReference = 000000000000000000000120 /* apple.app */;
+			productReference = 000000000000000000000120 /* OpenEmail.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -79,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 000000000000000010000000 /* Build configuration list for PBXProject "apple" */;
+			buildConfigurationList = 000000000000000010000000 /* Build configuration list for PBXProject "OpenEmail" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				000000000000000100000000 /* apple */,
+				000000000000000100000000 /* OpenEmail */,
 			);
 		};
 /* End PBXProject section */
@@ -110,15 +135,18 @@
 		000000000000000120000000 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
+				6922FE8C304E512A00BAEA9D /* MessageView.swift in Sources */,
+				6922FE92304F71D200BAEA9D /* InboxView.swift in Sources */,
 				6922FE89304CFB8900BAEA9D /* MessageListItemView.swift in Sources */,
+				6922FE8F304E51A300BAEA9D /* Message.swift in Sources */,
 				6922FE863047001500BAEA9D /* App.swift in Sources */,
-				6922FE873047001500BAEA9D /* InboxView.swift in Sources */,
+				6922FE873047001500BAEA9D /* MessageListView.swift in Sources */,
 			);
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		000000000000000011000000 /* Debug configuration for PBXProject "apple" */ = {
+		000000000000000011000000 /* Debug configuration for PBXProject "OpenEmail" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,7 +216,7 @@
 			};
 			name = Debug;
 		};
-		000000000000000012000000 /* Release configuration for PBXProject "apple" */ = {
+		000000000000000012000000 /* Release configuration for PBXProject "OpenEmail" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -250,7 +278,7 @@
 			};
 			name = Release;
 		};
-		000000000000000111000000 /* Debug configuration for PBXNativeTarget "apple" */ = {
+		000000000000000111000000 /* Debug configuration for PBXNativeTarget "OpenEmail" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -288,7 +316,7 @@
 			};
 			name = Debug;
 		};
-		000000000000000112000000 /* Release configuration for PBXNativeTarget "apple" */ = {
+		000000000000000112000000 /* Release configuration for PBXNativeTarget "OpenEmail" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -329,19 +357,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		000000000000000010000000 /* Build configuration list for PBXProject "apple" */ = {
+		000000000000000010000000 /* Build configuration list for PBXProject "OpenEmail" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000000000011000000 /* Debug configuration for PBXProject "apple" */,
-				000000000000000012000000 /* Release configuration for PBXProject "apple" */,
+				000000000000000011000000 /* Debug configuration for PBXProject "OpenEmail" */,
+				000000000000000012000000 /* Release configuration for PBXProject "OpenEmail" */,
 			);
 			defaultConfigurationName = Release;
 		};
-		000000000000000110000000 /* Build configuration list for PBXNativeTarget "apple" */ = {
+		000000000000000110000000 /* Build configuration list for PBXNativeTarget "OpenEmail" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000000000111000000 /* Debug configuration for PBXNativeTarget "apple" */,
-				000000000000000112000000 /* Release configuration for PBXNativeTarget "apple" */,
+				000000000000000111000000 /* Debug configuration for PBXNativeTarget "OpenEmail" */,
+				000000000000000112000000 /* Release configuration for PBXNativeTarget "OpenEmail" */,
 			);
 			defaultConfigurationName = Release;
 		};

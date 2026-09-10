@@ -12,19 +12,25 @@ import SwiftUI
 struct app: App {
   var body: some Scene {
     Window("Inbox", id: "inbox" ) {
-      PrimaryView()
+      Inbox()
+    }
+    WindowGroup(
+      "Message",
+      id: "messageView",
+      for: ImmutableMessage.self
+    ) { $message in
+      MessageView(message: message)
     }
     Settings {}
   }
 }
 
-struct PrimaryView: View {
+struct Inbox: View {
   var body: some View {
-    InboxView()
-      .frame(minWidth: 500, minHeight: 1000)
+    MessageListView()
   }
 }
 
 #Preview {
-  PrimaryView()
+  Inbox()
 }

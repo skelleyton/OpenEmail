@@ -20,6 +20,8 @@ struct MessageListItemView: View {
   @State var message: MessageListItem
   @Binding var focusedMessage: UUID?
 
+  @Environment(\.openWindow) private var openWindow
+
   @State private var isHovered: Bool = false
 
   private func getBackgroundState() -> Color {
@@ -53,6 +55,9 @@ struct MessageListItemView: View {
     .onTapGesture {
       focusedMessage = message.id
     }
+    .onTapGesture(count: 2) {
+      openWindow(message)
+    }
   }
 }
 
@@ -61,7 +66,7 @@ extension MessageListItemView {
 }
 
 #Preview {
-@Previewable @State var focusedMessage: UUID?
+  @Previewable @State var focusedMessage: UUID?
   MessageListItemView(
     message: MessageListItem(
       id: UUID(),
